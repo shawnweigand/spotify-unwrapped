@@ -6,6 +6,9 @@ use Livewire\Component;
 
 class SpotifyAuthToken extends Component
 {
+
+    public $response = 'placeholder';
+
     public function render()
     {
         return view('livewire.spotify.spotify-auth-token');
@@ -13,7 +16,7 @@ class SpotifyAuthToken extends Component
 
     public function authToken()
     {
-        dd('hello');
-        return;
+        $this->response = 'hello';
+        dd($this->response);
     }
 }

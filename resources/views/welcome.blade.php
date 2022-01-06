@@ -2,7 +2,6 @@
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @livewireStyles
-@livewireScripts
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,6 +23,9 @@
         </style>
     </head>
     <body class="antialiased">
+
+    <livewire:spotify.spotify-auth-token />
+
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -38,8 +40,6 @@
                     @endauth
 
                     <!-- Spotify Auth -->
-                    <livewire:spotify.spotify-auth-token />
-
                 </div>
             @endif
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
@@ -135,4 +135,5 @@
             </div>
         </div>
     </body>
+@livewireScripts
 </html>

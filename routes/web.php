@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Spotify\SpotifyAuthToken;
 use Illuminate\Support\Facades\Route;
 
 /*
