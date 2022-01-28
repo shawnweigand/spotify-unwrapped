@@ -22,4 +22,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/api', function () {
+    return view('/livewire/spotify/spotify-auth-token');
+});
+
 require __DIR__.'/auth.php';
