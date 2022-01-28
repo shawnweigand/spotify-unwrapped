@@ -23,6 +23,9 @@
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            <img style="border-radius: 50%; margin: 10px" width="40" height="40" src="https://media-exp1.licdn.com/dms/image/C4E03AQE6CQ3Dsb3e7Q/profile-displayphoto-shrink_400_400/0/1533502488259?e=1648684800&v=beta&t=QMAWqrffUXRBBkR-B8gdB2dcBn6MeuWxLIp5gGVCbaw">
+    
+
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ml-1">
