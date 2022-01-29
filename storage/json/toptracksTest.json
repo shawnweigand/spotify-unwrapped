@@ -1,0 +1,24 @@
+{
+    "title": "Your Top Tracks",
+    "headers": ["Track", "Artist", "Album", "Year"],
+    "rows": [
+        {
+            "track": "Song 1",
+            "artist": "Artist 1",
+            "album": "Album 1",
+            "year": "2001"
+        },
+        {
+            "track": "Song 2",
+            "artist": "Artist 2",
+            "album": "Album 2",
+            "year": "2002"
+        },
+        {
+            "track": "Song 3",
+            "artist": "Artist 3",
+            "album": "Album 3",
+            "year": "2003"
+        }
+    ]
+}

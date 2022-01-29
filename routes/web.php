@@ -19,7 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return 
+    // dd(json_decode(file_get_contents(storage_path()."/json/toptracksTest.json"),true));
+    view('dashboard', ['tableContent' => json_decode(file_get_contents(storage_path()."/json/toptracksTest.json"),true)]);
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/api', function () {
