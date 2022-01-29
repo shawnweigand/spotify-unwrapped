@@ -18,6 +18,5 @@
         </div>
     </div>
 
-    <!-- <x-table carrot </x-table carrot -->
     <livewire:components.table :content="$tableContent">
 </x-app-layout>
