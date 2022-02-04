@@ -15,6 +15,10 @@ class CreateSpotifyApiJsonsTable extends Migration
     {
         Schema::create('spotify_api_jsons', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->json('top_items_l');
+            $table->json('top_items_m');
+            $table->json('top_items_s');
             $table->timestamps();
         });
     }
