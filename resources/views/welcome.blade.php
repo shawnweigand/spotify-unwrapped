@@ -3,6 +3,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @livewireStyles
     <head>
+        <livewire:spotify.spotify-auth-token />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
