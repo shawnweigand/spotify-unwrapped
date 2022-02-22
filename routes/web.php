@@ -28,6 +28,11 @@ Route::get('/api', function () {
     return view('livewire/spotify/spotify-auth-token');
 });
 
+Route::controller(SpotifyAuthToken::class)->group(function() {
+    Route::get('/callback', 'callback');
+    // Route::get('/spotifylogin', 'login');
+});
+
 Route::get('/callback', [SpotifyAuthToken::class, 'callback']);
 
 require __DIR__.'/auth.php';

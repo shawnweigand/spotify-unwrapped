@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 use SpotifyWebAPI\Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 require __DIR__ . '/../../../../vendor/autoload.php';
 
@@ -65,6 +67,25 @@ class SpotifyAuthToken extends Component
         // Store the access and refresh tokens somewhere. In a session for example
 
         // Send the user along and fetch some data!
-        return redirect('/');
+        return $this->login($accessToken, $refreshToken);
+    }
+
+    public function login($accessToken, $refreshToken) {
+        $response = json_decode(Http::withHeaders([
+            'Authorization' => 'Bearer '.$accessToken
+        ])->get('https://api.spotify.com/v1/me')->body(), true);
+
+        User::updateOrCreate(
+            ['spotify_id' => $response['id']],
+            [
+                'name' => $response['display_name'],
+                'link' => $response['external_urls']['spotify'],
+                'image' => $response['images'][0]['url'],
+                'json' => json_encode($response),
+                'access_token' => $accessToken,
+                'refresh_token' => $refreshToken
+            ]
+        );
+        return redirect('/dashboard');
     }
 }

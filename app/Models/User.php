@@ -19,8 +19,14 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'password',
+        'spotify_id',
+        'link',
+        'image',
+        // 'email',
+        // 'password',
+        'json',
+        'access_token',
+        'refresh_token'
     ];
 
     /**
@@ -29,8 +35,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        // 'password',
+        'remember_token'
     ];
 
     /**
