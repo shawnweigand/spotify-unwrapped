@@ -2,12 +2,15 @@
 
 namespace App\Http\Livewire\Spotify;
 
+use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 use SpotifyWebAPI\Session;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/../../../../vendor/autoload.php';
 
@@ -86,6 +89,10 @@ class SpotifyAuthToken extends Component
                 'refresh_token' => $refreshToken
             ]
         );
-        return redirect('/dashboard');
+        $loginRequest = new LoginRequest();
+        // Http::post('http://127.0.0.1:8000/login');
+        dd($loginRequest);
+        return redirect('/login');
+        // return redirect('/dashboard');
     }
 }
